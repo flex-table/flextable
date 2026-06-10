@@ -1,0 +1,53 @@
+name: Bug report
+description: Something broke or behaved unexpectedly
+labels: [bug]
+body:
+  - type: input
+    id: version
+    attributes:
+      label: FlexTable version
+      placeholder: e.g. 0.2.2 (see the title bar)
+    validations:
+      required: true
+  - type: dropdown
+    id: os
+    attributes:
+      label: Operating system
+      options:
+        - macOS
+        - Windows
+        - Linux
+    validations:
+      required: true
+  - type: dropdown
+    id: db
+    attributes:
+      label: Database type involved
+      options:
+        - PostgreSQL
+        - MySQL
+        - SQLite
+        - MongoDB
+        - Redis
+        - Other / not database-specific
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. ...
+        2. ...
+        3. ...
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected vs actual
+      placeholder: What did you expect to happen, and what happened instead?
+    validations:
+      required: true
+  - type: textarea
+    id: extra
+    attributes:
+      label: Screenshots / logs (optional)
