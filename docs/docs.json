@@ -1,0 +1,47 @@
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "theme": "mint",
+  "name": "FlexTable",
+  "colors": {
+    "primary": "#4f46e5",
+    "light": "#6366f1",
+    "dark": "#4f46e5"
+  },
+  "favicon": "/favicon.svg",
+  "navigation": {
+    "groups": [
+      {
+        "group": "Getting started",
+        "pages": ["index", "installation", "first-connection"]
+      }
+    ]
+  },
+  "navbar": {
+    "links": [
+      {
+        "label": "FlexTable",
+        "href": "https://flextable.dev"
+      }
+    ]
+  },
+  "footer": {
+    "socials": {
+      "github": "https://github.com/flex-table/flextable-releases"
+    },
+    "links": [
+      {
+        "header": "FlexTable",
+        "items": [
+          {
+            "label": "Website",
+            "href": "https://flextable.dev"
+          },
+          {
+            "label": "GitHub",
+            "href": "https://github.com/flex-table/flextable-releases"
+          }
+        ]
+      }
+    ]
+  }
+}
