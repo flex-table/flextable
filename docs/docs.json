@@ -26,7 +26,7 @@
   },
   "footer": {
     "socials": {
-      "github": "https://github.com/flex-table/flextable-releases"
+      "github": "https://github.com/flex-table/flextable"
     },
     "links": [
       {
@@ -38,7 +38,7 @@
           },
           {
             "label": "GitHub",
-            "href": "https://github.com/flex-table/flextable-releases"
+            "href": "https://github.com/flex-table/flextable"
           }
         ]
       }
