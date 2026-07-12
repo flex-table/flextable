@@ -1,0 +1,46 @@
+---
+title: Backup and restore
+description: Back up a database with the matching engine tools, downloaded and verified for you, and restore it later.
+---
+
+Back up a whole database and restore it later, per connection. FlexTable drives the real engine tools under the hood, so a backup is a standard dump you can trust and reuse.
+
+<Note>Backup and restore is a PRO feature.</Note>
+
+![The Backup dialog](/images/11-backup-restore/backup.png)
+
+## Tools, handled for you
+
+Backups use each engine's native client tools (`pg_dump` / `pg_restore`, `mysqldump`, `mongodump` / `mongorestore`, and the SQLite and Redis equivalents). FlexTable **downloads and verifies the version-matched tools automatically** and shows their status, so a backup taken here is compatible and you never hunt for a matching CLI.
+
+<Tip>**Version-matched.** FlexTable checks the tool version against your server and flags a mismatch before it can produce a bad dump.</Tip>
+
+## Back up
+
+<Steps>
+  <Step title="Choose Backup on a connection" />
+  <Step title="Pick the options for that engine">
+    - **Format** - for example PostgreSQL custom or plain SQL, a MongoDB archive, a MySQL SQL dump, a SQLite file copy, or a Redis snapshot.
+    - **Scope** - the whole database, or selected tables/collections.
+    - **Compression** - optional, to shrink the output.
+  </Step>
+  <Step title="Choose where to save and run it">Progress is shown as it works.</Step>
+</Steps>
+
+![Backup options per engine](/images/11-backup-restore/options.png)
+
+## Restore
+
+<Steps>
+  <Step title="Choose Restore on a connection" />
+  <Step title="Pick the backup file">FlexTable auto-detects the format.</Step>
+  <Step title="Set restore options (for example the target database) and run" />
+</Steps>
+
+![Restore dialog](/images/11-backup-restore/restore.png)
+
+<Warning>**Safe by default.** Review the target before you run a restore; restoring into an existing database can overwrite data.</Warning>
+
+<Card title="Per-table data" icon="arrow-right-arrow-left" href="/import-and-export">
+For CSV/JSON/SQL/Excel of a single table, use Import and export instead.
+</Card>

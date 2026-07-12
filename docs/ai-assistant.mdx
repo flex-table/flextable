@@ -1,0 +1,33 @@
+---
+title: AI Assistant
+description: Generate and explain queries with an AI provider you connect using your own key.
+---
+
+Ask the assistant to **generate** a query from a plain-language description, **explain** an existing query, or help you debug, with awareness of your current database's schema.
+
+![The AI Assistant](/images/08-ai-assistant/chat.png)
+
+## Bring your own key
+
+For privacy and security, **FlexTable ships with no AI keys**; you connect your own provider. Your key and requests go directly from the app to the provider you choose, nothing is routed through FlexTable.
+
+<Steps>
+  <Step title="Open Settings, then AI Assistant" />
+  <Step title="Choose a provider">Built-in providers: Anthropic, OpenAI, Google, OpenRouter, DeepSeek, GitHub Copilot, Ollama.</Step>
+  <Step title="Enter your API key and select a model" />
+  <Step title="Save" />
+</Steps>
+
+![AI provider setup](/images/08-ai-assistant/provider-setup.png)
+
+<Note>The built-in providers above are free (you bring your own key). Adding a **custom provider** with your own **base URL** (a self-hosted, proxy, or OpenAI-compatible endpoint) is a PRO feature.</Note>
+
+<Tip>**Local models too.** With a custom provider you can point the base URL at a local runtime (for example an Ollama-compatible endpoint) to keep everything on your machine.</Tip>
+
+## Use it
+
+- Describe what you want ("top 10 customers by revenue this month") to get a query.
+- Paste a query and ask for an explanation or a fix.
+- Run the suggested query directly in the editor.
+
+<Warning>The AI provider you choose receives the query and schema context you send it. When your data is sensitive, use a provider you trust. See [Security and privacy](/security-and-privacy).</Warning>

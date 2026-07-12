@@ -1,0 +1,49 @@
+---
+title: Quickstart
+description: Connect to a database and run your first query in a few minutes.
+---
+
+This takes you from a fresh install to your first query. It assumes FlexTable is [installed](/installation).
+
+<Steps>
+  <Step title="Create a connection">
+    Click **+ New Connection** at the top of the sidebar, choose a database type (for example **PostgreSQL**), and fill in the host, port, database, username, and password. For **SQLite**, just pick the `.db` file.
+
+    Click **Test** to verify, then **Save**.
+
+    ![New connection dialog](/images/01-getting-started/new-connection.png)
+
+    <Tip>A green **Connected** badge means the credentials and network are good. Fix any issue here before you save. Full per-engine details are in [Connect to a database](/connecting).</Tip>
+  </Step>
+  <Step title="Open a table">
+    In the sidebar, expand your connection, expand a database, and click a **table**. It opens as a tab and rows load into the grid.
+
+    ![Table in the grid](/images/01-getting-started/first-table.png)
+
+    <Tip>Even million-row tables scroll smoothly, so large data feels as fast as small.</Tip>
+  </Step>
+  <Step title="Run a query">
+    Click **+** in the tab bar and choose **New Query**. Type a statement (autocomplete suggests tables and columns as you type):
+
+    ```sql
+    SELECT * FROM users WHERE created_at > '2024-01-01' LIMIT 100;
+    ```
+
+    Press **Cmd/Ctrl + Enter** to run. Results appear in the grid below.
+
+    ![Query editor with results](/images/04-query-editor/editor.png)
+  </Step>
+  <Step title="Visualize (optional)">
+    Switch the result from **Table** to **Chart** to see it as a bar, line, or pie chart.
+    <Note>Charts are a PRO feature.</Note>
+  </Step>
+</Steps>
+
+## Where to next
+
+<CardGroup cols={2}>
+  <Card title="Connect to a database" icon="plug" href="/connecting">Per-engine connection details.</Card>
+  <Card title="Browse and edit data" icon="table" href="/browse-and-edit">Filter, sort, inspect, and edit rows.</Card>
+  <Card title="Query editor" icon="terminal" href="/query-editor">Autocomplete, results, export, charts.</Card>
+  <Card title="Import and export" icon="arrow-right-arrow-left" href="/import-and-export">Move data in and out.</Card>
+</CardGroup>

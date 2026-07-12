@@ -1,46 +1,49 @@
 ---
-title: "Overview"
-description: "Learn how to install FlexTable, connect to PostgreSQL, MySQL, SQLite, MongoDB and Redis, run queries, and manage schemas."
+title: Introduction
+description: FlexTable is a fast, native desktop client for PostgreSQL, MySQL, SQLite, MongoDB, Redis, and more engines on the way.
 ---
 
-FlexTable is a fast, native desktop client for relational and NoSQL databases.
-Connect to PostgreSQL, MySQL, SQLite, MongoDB and Redis, then browse, query and
-edit your data through a keyboard-first interface - no web tab, no spinner.
+**FlexTable** is a desktop database client for developers and DBAs. Connect to your databases, browse and edit data, write and run queries, visualize results, and move data in and out, all from one fast, native app.
+
+![FlexTable overview](/images/00-introduction/overview.png)
+
+## One client for every database
+
+FlexTable speaks both SQL and NoSQL with a consistent interface.
+
+| Database | Highlights |
+|---|---|
+| **PostgreSQL** | Schemas, types, indexes, foreign keys, `ILIKE` search |
+| **MySQL / MariaDB** | Collation-aware, full schema browsing |
+| **SQLite** | File-based, zero-config, just open the file |
+| **MongoDB** | Documents, Extended JSON, shell-style queries |
+| **Redis** | Keyspace browser with TTLs, every value type, and live Pub/Sub |
 
 <Note>
-  FlexTable is in public beta (v0.2). Every feature is unlocked while we're in
-  beta. Found a bug? [Let us know](https://flextable.dev/contact).
+**The list keeps growing.** New engines work the same way as the ones you already know, so there is nothing new to learn. On the roadmap: Microsoft SQL Server, Oracle, CockroachDB, Redshift, Supabase, ClickHouse, DuckDB, Snowflake, BigQuery, Cassandra, Elasticsearch, DynamoDB, InfluxDB, TimescaleDB, and more. Want one sooner? Tell us and we will prioritize it.
 </Note>
 
-## Supported databases
+## What you can do
 
-A single window for all five engines - switch connections without switching tools.
+- **Browse** tables, collections, and keys in a fast grid built for large datasets.
+- **Edit** rows inline with typed editors (dates, numbers, JSON).
+- **Query** in the editor with autocomplete, then read results in the same grid.
+- **Visualize** a result as a chart (bar, line, area, pie, scatter).
+- **Import and export** CSV, JSON, SQL, and Excel.
+- **Understand** structure with the schema view and an ER diagram.
+- **Ask the AI Assistant** to generate or explain a query.
 
-| Database         | Highlights                                          |
-| ---------------- | --------------------------------------------------- |
-| PostgreSQL       | Roles, schemas, extensions, `EXPLAIN ANALYZE`       |
-| MySQL & MariaDB  | Engines, charsets, replication-aware reads          |
-| SQLite           | File-based connections with WAL support             |
-| MongoDB          | Aggregation pipelines, BSON cells, indexes          |
-| Redis            | Keyspace browser, TTL, streams                      |
+<Note>
+**Free and PRO.** Connecting, browsing, editing, running **SQL** queries, and CSV/JSON export are free. PRO adds charts, Excel and SQL export, multi-table export, backup and restore, ER-diagram export, running **NoSQL (MongoDB/Redis)** queries, multi-condition filters, and custom AI providers. See [Free and PRO](/editions).
+</Note>
 
-## Download & install
+## Why FlexTable
 
-FlexTable runs natively on all three desktop platforms. Head to the
-[download page](https://flextable.dev/#download) and grab the build for your OS:
+- **Fast on large data.** Scroll through millions of rows smoothly, with no lag.
+- **Native desktop app.** Small, quick to start, no browser tab.
+- **Consistent everywhere.** One set of tools across SQL and NoSQL, and every engine added next.
+- **Safe by default.** Destructive actions confirm; edits are staged and reviewable before you save.
 
-- **macOS** - universal build for Apple Silicon & Intel (macOS 12+)
-- **Windows** - installer & portable (Windows 10/11)
-- **Linux** - AppImage, `.deb` and `.rpm`
-
-## Next steps
-
-Once installed, follow [Your first connection](/first-connection) to connect
-to a database, or read the [Installation](/installation) guide for
-platform-specific notes.
-
-## Data collection
-
-FlexTable stores your connections locally and never sends your credentials or
-query results to our servers. Anonymous, aggregate usage metrics can be disabled
-any time in **Settings → Privacy**.
+<Card title="Get started" icon="rocket" href="/quickstart">
+Install FlexTable and run your first query in a few minutes.
+</Card>

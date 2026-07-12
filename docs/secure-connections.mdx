@@ -1,0 +1,32 @@
+---
+title: Secure connections
+description: Connect over SSL/TLS, through an SSH tunnel, or with AWS RDS IAM authentication.
+---
+
+FlexTable connects over more than a plain host and port. Depending on the engine, you can also secure or route the connection in the ways below. Configure these in the connection form (see [Connect to a database](/connecting)).
+
+## SSL / TLS
+
+For PostgreSQL, MySQL, MongoDB, and Redis, enable SSL and pick a mode:
+
+| Mode | Meaning |
+|---|---|
+| `disable` | No TLS |
+| `prefer` | Use TLS if the server offers it |
+| `require` | TLS required, certificate not verified |
+| `verify-ca` | TLS and verify the server certificate against a CA |
+| `verify-full` | `verify-ca` and verify the hostname |
+
+You can supply a **custom CA certificate**, and where supported a **client certificate and key** for mutual TLS.
+
+<Tip>Use `verify-full` for managed or cloud databases.</Tip>
+
+## SSH tunnel
+
+Reach a database that is only accessible through a bastion or jump host. Provide the SSH host, port, and user, plus either a password or a private key. FlexTable opens the tunnel and connects through it. Available for the host/port engines and MongoDB.
+
+## AWS RDS IAM authentication
+
+For PostgreSQL and MySQL on Amazon RDS, authenticate with **IAM** instead of a static password. Provide the AWS region and credentials (an access key and secret, or a named profile). FlexTable generates the short-lived auth token for each connection.
+
+<Note>Store credentials and keys securely; see [Security and privacy](/security-and-privacy).</Note>

@@ -1,0 +1,35 @@
+---
+title: Security and privacy
+description: Where FlexTable stores your connections and credentials, how they are encrypted, and what leaves your machine.
+---
+
+FlexTable is a native desktop app. Your databases are yours: it connects directly to them and does not proxy your data through its own servers.
+
+## Where your data is stored
+
+Connections, settings, saved queries, history, and AI provider configs live in a single local SQLite database, `flextable.db`, in the app data directory:
+
+| OS | Location |
+|---|---|
+| macOS | `~/Library/Application Support/com.flextable.desktop/flextable.db` |
+| Windows | `%APPDATA%\com.flextable.desktop\flextable.db` |
+| Linux | `~/.local/share/com.flextable.desktop/flextable.db` |
+
+## Credentials and secrets
+
+Connection passwords, SSH keys, and AI API keys are **encrypted at rest** with **AES-256-GCM** (Argon2id key derivation) and never leave your machine. The encryption is bound to your machine and user account, so the database file cannot be decrypted if it is copied elsewhere.
+
+<Note>FlexTable does not use the OS keychain today, and the encryption is not based on a master password. It protects against casual inspection of the file and against copying it to another machine or account, but it is not keychain-grade on the same machine. OS-keychain integration is on the roadmap.</Note>
+
+API keys are also write-only in the UI: after you save one, the app only ever shows a short fingerprint, never the key itself.
+
+## Telemetry
+
+**FlexTable collects no telemetry, analytics, or automatic crash reporting. There is nothing to opt out of.**
+
+The only times FlexTable talks to the network, none of which is telemetry:
+
+- **License activation** with `api.flextable.dev`, required for licensing.
+- **Update checks** with `api.flextable.dev` (version and architecture only).
+- **Feedback** you explicitly submit from the feedback dialog (your message, plus optional app version/OS and email). Nothing is sent unless you fill it in and click submit.
+- **AI requests** go directly to the provider you configured, with your own key, never through FlexTable servers. See [AI Assistant](/ai-assistant).

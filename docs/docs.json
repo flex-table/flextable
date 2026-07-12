@@ -2,7 +2,7 @@
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
   "name": "FlexTable",
-  "description": "Documentation for FlexTable - a fast, native desktop client for relational and NoSQL databases.",
+  "description": "FlexTable is a fast, native desktop client for PostgreSQL, MySQL, SQLite, MongoDB, Redis, and more engines on the way.",
   "colors": {
     "primary": "#4f46e5",
     "light": "#6366f1",
@@ -12,22 +12,45 @@
   "navigation": {
     "groups": [
       {
-        "group": "Getting started",
+        "group": "Get started",
+        "pages": ["index", "installation", "quickstart", "editions"]
+      },
+      {
+        "group": "Connections",
+        "pages": ["connecting", "secure-connections", "managing-connections"]
+      },
+      {
+        "group": "Working with data",
         "pages": [
-          "index",
-          "installation",
-          "first-connection"
+          "browse-and-edit",
+          "query-editor",
+          "charts",
+          "schema-and-er-diagram",
+          "import-and-export"
         ]
+      },
+      {
+        "group": "Database guides",
+        "pages": [
+          "guides/postgresql",
+          "guides/mysql",
+          "guides/sqlite",
+          "guides/mongodb",
+          "guides/redis"
+        ]
+      },
+      {
+        "group": "Manage and settings",
+        "pages": ["ai-assistant", "backup-and-restore", "settings"]
+      },
+      {
+        "group": "Help and reference",
+        "pages": ["keyboard-shortcuts", "security-and-privacy", "troubleshooting"]
       }
     ]
   },
   "navbar": {
-    "links": [
-      {
-        "label": "FlexTable",
-        "href": "https://flextable.dev"
-      }
-    ]
+    "links": [{ "label": "FlexTable", "href": "https://flextable.dev" }]
   },
   "footer": {
     "socials": {
@@ -37,14 +60,8 @@
       {
         "header": "FlexTable",
         "items": [
-          {
-            "label": "Website",
-            "href": "https://flextable.dev"
-          },
-          {
-            "label": "GitHub",
-            "href": "https://github.com/flex-table/flextable"
-          }
+          { "label": "Website", "href": "https://flextable.dev" },
+          { "label": "GitHub", "href": "https://github.com/flex-table/flextable" }
         ]
       }
     ]

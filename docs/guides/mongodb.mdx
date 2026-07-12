@@ -1,0 +1,23 @@
+---
+title: MongoDB
+description: Browse collections and documents, read Extended JSON, and run shell-style queries.
+---
+
+![A MongoDB document view](/images/09-database-guides/mongo-document.png)
+
+## Collections and documents
+
+- **Documents** are shown with Extended JSON; nested fields are fully browsable.
+- A **Structure panel** summarizes a collection's fields.
+
+## Shell-style queries
+
+Run shell-style queries in the [query editor](/query-editor):
+
+```js
+db.orders.find({ status: "paid" }).sort({ createdAt: -1 }).limit(50)
+```
+
+Browsing collections and documents is free. Running your own query is a NoSQL query.
+
+<Note>Running MongoDB queries is a PRO feature.</Note>
