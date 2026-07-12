@@ -1,0 +1,26 @@
+---
+title: PostgreSQL
+description: Work with PostgreSQL in FlexTable - schemas, rich types, indexes, foreign keys, and query plans.
+---
+
+PostgreSQL works like the rest of FlexTable ([connect](/connecting), [browse and edit](/browse-and-edit), [query](/query-editor)). This page covers what is specific to Postgres.
+
+## Schemas
+
+A Postgres database has multiple **schemas** (for example `public`). The sidebar groups tables by schema, so you can browse and switch between them.
+
+## Rich types
+
+Postgres types render and edit correctly in the grid and cell viewer:
+
+- **JSON / JSONB** - pretty-printed and searchable in the [cell detail panel](/browse-and-edit#cell-detail-panel).
+- **Arrays**, **enums**, and **ranges** display as their real values.
+- Case-insensitive text search (`ILIKE`) is used by default in the quick filter.
+
+## Structure
+
+The **Structure** tab shows columns, indexes (including uniqueness), foreign keys, and triggers. Foreign keys are drawn as relationships in the [ER diagram](/schema-and-er-diagram).
+
+## Query plans
+
+Run **Analyze** on a SQL statement in the [query editor](/query-editor) to read the plan as a visual tree and find where time is spent.

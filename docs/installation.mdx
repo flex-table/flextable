@@ -1,35 +1,36 @@
 ---
-title: "Installation"
-description: "Install FlexTable on macOS, Windows or Linux."
+title: Install FlexTable
+description: Download and install FlexTable on macOS, Windows, or Linux.
 ---
 
-FlexTable ships as a native app for all three desktop platforms. Pick your OS below.
+Get the installer for your platform from the [FlexTable download page](https://flextable.dev/download), then install and launch.
 
-## macOS
+<Steps>
+  <Step title="Download for your OS">
+    - **macOS** - `FlexTable_<version>_aarch64.dmg` (Apple Silicon) or `x64.dmg` (Intel)
+    - **Windows** - `FlexTable_<version>_x64-setup.exe`
+    - **Linux** - `.AppImage` or `.deb`
+  </Step>
+  <Step title="Install">
+    Open the installer and follow the prompts. On macOS, drag **FlexTable** into **Applications**.
+  </Step>
+  <Step title="Launch">
+    Open **FlexTable**. You land on the Home screen, ready to add your first connection.
+  </Step>
+</Steps>
 
-1. Download the universal `.dmg` from the [download page](https://flextable.dev/#download).
-2. Open it and drag **FlexTable** into your Applications folder.
-3. Launch it - on first run, right-click → **Open** to bypass Gatekeeper.
+<Tip>
+**Auto-updates.** FlexTable checks for updates and notifies you when one is ready; install it with a click. New releases are included for your license's update window.
+</Tip>
 
-<Note>
-  Apple Silicon and Intel are both supported by the same build (macOS 12+).
-</Note>
+## System requirements
 
-## Windows
+| OS | Minimum |
+|---|---|
+| macOS | 12 or later (Apple Silicon or Intel) |
+| Windows | 10 or later, 64-bit |
+| Linux | a recent distribution (`.deb` or `.AppImage`) |
 
-1. Download the `.exe` installer (or the portable `.zip`).
-2. Run the installer and follow the prompts.
-3. FlexTable auto-updates in the background on Windows 10/11.
-
-## Linux
-
-We publish three formats:
-
-- **AppImage** - `chmod +x FlexTable.AppImage && ./FlexTable.AppImage`
-- **`.deb`** - `sudo apt install ./flextable.deb`
-- **`.rpm`** - `sudo dnf install ./flextable.rpm`
-
-## Verifying the install
-
-Open FlexTable and check **About → Version**. You should see `v0.2` or newer.
-Next up: [Your first connection](/first-connection).
+<Card title="Next: Quickstart" icon="arrow-right" href="/quickstart">
+Connect to a database and run your first query.
+</Card>

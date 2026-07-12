@@ -1,0 +1,20 @@
+---
+title: SQLite
+description: Open a SQLite file and start working - zero configuration, file-based.
+---
+
+SQLite works like the rest of FlexTable ([browse and edit](/browse-and-edit), [query](/query-editor)), with one difference: it is a file, not a server.
+
+## Open a database file
+
+There is no host, port, or credentials. Choose **SQLite** as the connection type, pick your `.db` or `.sqlite` file, and save. See [Connect to a database](/connecting).
+
+## Types
+
+SQLite uses dynamic typing, so a column can hold different value types. FlexTable shows the stored value as-is and edits it inline in the grid.
+
+## Structure
+
+The **Structure** tab shows the table's columns, indexes, and foreign keys, and relationships appear in the [ER diagram](/schema-and-er-diagram).
+
+<Tip>SQLite is great for local development and inspecting an app's database file directly.</Tip>

@@ -1,0 +1,52 @@
+---
+title: Browse and edit data
+description: Read, sort, filter, and edit rows in FlexTable's fast data grid.
+---
+
+## The data grid
+
+Open any table from the sidebar to load it into the grid.
+
+![Data grid and inspector](/images/03-browsing/grid.png)
+
+- **Sort** - click a column header.
+- **Navigate** - arrow keys move the active cell; the inspector follows the selection.
+- **Inspect** - click a cell to see its full value in the inspector.
+
+<Tip>**Built for big tables.** Even tables with millions of rows scroll smoothly.</Tip>
+
+### Cell detail panel
+
+Click a cell to open its full value in the inspector, a rich value viewer rather than a plain text box:
+
+- **Choose the display format** - render the value as **Formatted, JSON, Markdown, HTML, plain text, or Raw**. Markdown and HTML get a live preview; the code formats get syntax highlighting, in-panel search (Ctrl+F), and folding.
+- **Fullscreen** - maximize the panel to read or edit a large value comfortably.
+- **Copy or download** the value.
+
+![Cell detail with format picker](/images/03-browsing/detail-format.png)
+
+## Filter
+
+Open the filter bar and add conditions (`=`, `contains`, `in`, `is null`, and more); combine them with **all** or **any**. Text search is case-insensitive by default.
+
+![Filter bar](/images/03-browsing/filter.png)
+
+<Note>A single filter condition is free. Combining **multiple conditions** (advanced filtering) is a PRO feature.</Note>
+
+## Edit a row
+
+Double-click a cell to edit inline. FlexTable picks the right editor for the column type: a date picker, number field, text box, or JSON editor.
+
+![Edit a cell](/images/03-browsing/edit-cell.png)
+
+<Tip>**Staged and reviewable.** Edits are staged locally and highlighted before you **Save**, so nothing hits the database until you confirm. Use **Rollback** to discard.</Tip>
+
+By default your pending edits are committed together as a single transaction; you can switch to autocommit (each change on its own) with the transaction-mode toggle in [Settings](/settings).
+
+## Structure tab
+
+Switch a table to the **Structure** tab to see its columns, indexes, foreign keys, and triggers, where the engine supports them. See [Schema and ER diagram](/schema-and-er-diagram) for more.
+
+<Card title="Next: Query editor" icon="arrow-right" href="/query-editor">
+Write and run queries with schema-aware autocomplete.
+</Card>

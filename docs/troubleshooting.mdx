@@ -1,0 +1,28 @@
+---
+title: Troubleshooting
+description: Fixes for common connection errors and issues, plus where to get help.
+---
+
+## Cannot connect
+
+Most connection problems come from the host, credentials, or transport. Use **Test** in the connection form to see the exact error.
+
+<AccordionGroup>
+  <Accordion title="Connection timed out or host unreachable">
+    Check the host and port, and that the database is reachable from your machine (firewall, VPN, security group). If the database is behind a bastion, use an [SSH tunnel](/secure-connections#ssh-tunnel).
+  </Accordion>
+  <Accordion title="Authentication failed">
+    Verify the username and password, the target database, and the auth method. On Amazon RDS you can use [IAM authentication](/secure-connections#aws-rds-iam-authentication) instead of a static password. For Redis 6+, remember the username can be blank with ACLs.
+  </Accordion>
+  <Accordion title="SSL / TLS errors">
+    Match the SSL mode to your server. Managed and cloud databases usually need `verify-full` with a CA certificate. See [Secure connections](/secure-connections#ssl--tls).
+  </Accordion>
+</AccordionGroup>
+
+## Updates
+
+If an update fails to apply, relaunch FlexTable and let it check again, or reinstall the latest build from the [download page](https://flextable.dev/download).
+
+## Get help
+
+Report a bug or ask a question on [GitHub](https://github.com/flex-table/flextable/issues), or use the in-app feedback dialog.

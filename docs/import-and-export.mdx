@@ -1,0 +1,52 @@
+---
+title: Import and export
+description: Move data in and out of FlexTable as CSV, JSON, SQL, or Excel.
+---
+
+## Export
+
+Click **Export** on a result or table and choose a format:
+
+| Format | Use | License |
+|---|---|---|
+| **CSV** | Spreadsheets, generic tooling | Free |
+| **JSON** | APIs, document stores | Free |
+| **SQL** | `INSERT` statements (SQL databases) | PRO |
+| **Excel** | `.xlsx` workbook | PRO |
+
+<Steps>
+  <Step title="Open a table or run a query" />
+  <Step title="Click Export" />
+  <Step title="Pick a format and options, then choose where to save" />
+</Steps>
+
+![Export dialog](/images/06-import-export/export.png)
+
+<Note>SQL and Excel export are PRO, and **exporting more than one table at once** (multi-table export) is PRO. CSV and JSON export of a single result or table are free.</Note>
+
+<Tip>**Export what you see.** Filtered exports respect the filters applied in the grid; only the matching rows are written.</Tip>
+
+## Import
+
+Bring a file into a table:
+
+<Steps>
+  <Step title="Choose Import on the target table" />
+  <Step title="Pick the source file" />
+  <Step title="Map the file's columns to the table's columns" />
+  <Step title="Run the import" />
+</Steps>
+
+| Format | License |
+|---|---|
+| **CSV** | Free |
+| **JSON** | Free |
+| **SQL** (run a `.sql` file of statements) | PRO |
+
+![Import flow](/images/06-import-export/import.png)
+
+<Note>SQL import is PRO; CSV and JSON import are free. Excel is export-only, there is no `.xlsx` import.</Note>
+
+<Card title="Whole-database backups" icon="database" href="/backup-and-restore">
+Import and export move per-table data. To copy or restore an entire database, use Backup and restore (PRO).
+</Card>

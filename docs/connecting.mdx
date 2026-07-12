@@ -1,0 +1,71 @@
+---
+title: Connect to a database
+description: How to connect FlexTable to PostgreSQL, MySQL, SQLite, MongoDB, Redis, and more engines as they land.
+---
+
+Every engine uses the same flow: **+ New Connection -> pick a type -> fill the form -> Test -> Save**, with fields that match that engine. New databases follow the same flow as they are added.
+
+![Connection type picker](/images/02-connecting/type-picker.png)
+
+<Tip>The **Test** button validates your credentials and reachability before you save. A green **Connected** badge means you are good to go.</Tip>
+
+<Tabs>
+  <Tab title="PostgreSQL">
+    | Field | Notes |
+    |---|---|
+    | Host / Port | e.g. `localhost` / `5432` |
+    | Database | the default database to open |
+    | User / Password | always required |
+    | SSL | see [Secure connections](/secure-connections) |
+
+    ![PostgreSQL form](/images/02-connecting/postgres.png)
+  </Tab>
+  <Tab title="MySQL / MariaDB">
+    | Field | Notes |
+    |---|---|
+    | Host / Port | e.g. `localhost` / `3306` |
+    | Database | optional, leave blank to browse all |
+    | User / Password | required |
+
+    ![MySQL form](/images/02-connecting/mysql.png)
+  </Tab>
+  <Tab title="SQLite">
+    SQLite is file-based, so there is no host, port, or credentials.
+
+    <Steps>
+      <Step title="Choose SQLite">Pick SQLite as the type.</Step>
+      <Step title="Select the file">Click **Browse** and choose your `.db` or `.sqlite` file.</Step>
+      <Step title="Save">The database opens in the sidebar.</Step>
+    </Steps>
+
+    ![SQLite file picker](/images/02-connecting/sqlite.png)
+  </Tab>
+  <Tab title="MongoDB">
+    | Field | Notes |
+    |---|---|
+    | Connection string | `mongodb://...` or `mongodb+srv://...` (Atlas) |
+    | Or host / port / auth | enter the components individually |
+    | Database | optional |
+
+    ![MongoDB form](/images/02-connecting/mongodb.png)
+  </Tab>
+  <Tab title="Redis">
+    Redis auth varies by version: no auth (local/dev), password only (Redis < 6), or username + password (Redis 6+ ACL).
+
+    | Field | Notes |
+    |---|---|
+    | Host / Port | e.g. `localhost` / `6379` |
+    | Username | optional (ACL) |
+    | Password | optional |
+    | Database index | `0`-`15` |
+
+    ![Redis form](/images/02-connecting/redis.png)
+  </Tab>
+</Tabs>
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="Secure connections" icon="lock" href="/secure-connections">SSL/TLS, SSH tunnel, and AWS RDS IAM auth.</Card>
+  <Card title="Manage connections" icon="folder-tree" href="/managing-connections">Organize connections into folders and favorites.</Card>
+</CardGroup>
