@@ -10,15 +10,14 @@ One workspace to browse, query, edit, visualize, and manage your databases, with
 
 <p>
   <a href="https://docs.flextable.dev"><img src="https://img.shields.io/badge/Documentation-docs.flextable.dev-4f46e5?style=for-the-badge&logo=readthedocs&logoColor=white" alt="Documentation" /></a>
-  <a href="../../releases/latest"><img src="https://img.shields.io/badge/Download-Releases-16a34a?style=for-the-badge&logo=github&logoColor=white" alt="Download" /></a>
+  <a href="https://flextable.dev/download"><img src="https://img.shields.io/badge/Download-flextable.dev-16a34a?style=for-the-badge" alt="Download" /></a>
+  <a href="https://flextable.dev/changelog"><img src="https://img.shields.io/badge/Changelog-Release%20notes-8b5cf6?style=for-the-badge&logo=git&logoColor=white" alt="Changelog" /></a>
   <a href="https://flextable.dev"><img src="https://img.shields.io/badge/Website-flextable.dev-1e1b4b?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Website" /></a>
   <a href="../../issues/new/choose"><img src="https://img.shields.io/badge/Issues-Report%20%2F%20Request-ef4444?style=for-the-badge&logo=github&logoColor=white" alt="Issues" /></a>
 </p>
 
 <p>
-  <img src="https://img.shields.io/github/v/release/flex-table/flextable?display_name=tag&label=latest&color=4f46e5" alt="Latest release" />
   <img src="https://img.shields.io/badge/platforms-macOS%20%C2%B7%20Windows%20%C2%B7%20Linux-64748b" alt="Platforms" />
-  <img src="https://img.shields.io/github/downloads/flex-table/flextable/total?label=downloads&color=16a34a" alt="Downloads" />
 </p>
 
 <img src="docs/images/00-introduction/overview.png" alt="FlexTable workspace" width="900" />
@@ -27,7 +26,7 @@ One workspace to browse, query, edit, visualize, and manage your databases, with
 
 ---
 
-> **This repository is the public home for FlexTable.** The application source is private; here you will find **downloads**, **release notes**, **documentation**, and **issue / feedback** tracking.
+> **This repository is the public home for FlexTable** - the **documentation** and the place to **report issues and share feedback**. Downloads and release notes live at [flextable.dev](https://flextable.dev).
 
 ## Why FlexTable
 
@@ -55,7 +54,7 @@ One workspace to browse, query, edit, visualize, and manage your databases, with
 
 ## Download & install
 
-Grab the latest build for your platform from the [**Releases**](../../releases/latest) page.
+Grab the latest build for your platform from the [**download page**](https://flextable.dev/download).
 
 | Platform | File |
 |---|---|
@@ -63,7 +62,7 @@ Grab the latest build for your platform from the [**Releases**](../../releases/l
 | **Windows** | `FlexTable_<version>_x64-setup.exe` |
 | **Linux** | `.AppImage` (recommended) or `.deb` |
 
-FlexTable checks for updates and installs them with a click.
+FlexTable checks for updates and installs them with a click. See the [changelog](https://flextable.dev/changelog) for what changed in each release.
 
 > **Linux note:** in-app auto-updates require the **AppImage** build. A `.deb` is managed by your system package manager, so to update it you reinstall the newer `.deb` or switch to the AppImage.
 
@@ -87,5 +86,6 @@ FlexTable runs entirely on your machine and talks only to the databases and the 
 
 - Website: [flextable.dev](https://flextable.dev)
 - Documentation: [docs.flextable.dev](https://docs.flextable.dev)
-- Download: [Releases](../../releases/latest)
+- Download: [flextable.dev/download](https://flextable.dev/download)
+- Changelog: [flextable.dev/changelog](https://flextable.dev/changelog)
 - Community: [Discussions](../../discussions)
