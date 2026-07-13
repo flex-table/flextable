@@ -9,10 +9,12 @@ Get the installer for your platform from the [FlexTable download page](https://f
   <Step title="Download for your OS">
     - **macOS** - `FlexTable_<version>_aarch64.dmg` (Apple Silicon) or `x64.dmg` (Intel)
     - **Windows** - `FlexTable_<version>_x64-setup.exe`
-    - **Linux** - `.AppImage` or `.deb`
+    - **Linux** - `.AppImage` (recommended) or `.deb`
   </Step>
   <Step title="Install">
     Open the installer and follow the prompts. On macOS, drag **FlexTable** into **Applications**.
+
+    <Note>**Linux: pick AppImage for in-app updates.** The **AppImage** build updates itself in place, so the built-in updater works. A **`.deb`** install is managed by your system package manager, so FlexTable cannot update it from inside the app: to get a new version you either reinstall the newer `.deb` yourself, or switch to the AppImage. If you want one-click updates, use the AppImage.</Note>
   </Step>
   <Step title="Launch">
     Open **FlexTable**. You land on the Home screen, ready to add your first connection.
@@ -20,7 +22,7 @@ Get the installer for your platform from the [FlexTable download page](https://f
 </Steps>
 
 <Tip>
-**Auto-updates.** FlexTable checks for updates and notifies you when one is ready; install it with a click. New releases are included for your license's update window.
+**Auto-updates.** FlexTable checks for updates and notifies you when one is ready; install it with a click. New releases are included for your license's update window. On Linux, in-app updates require the **AppImage** build (a `.deb` is updated through your package manager instead).
 </Tip>
 
 ## System requirements
