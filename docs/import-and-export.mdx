@@ -7,12 +7,12 @@ description: Move data in and out of FlexTable as CSV, JSON, SQL, or Excel.
 
 Click **Export** on a result or table and choose a format:
 
-| Format | Use | License |
-|---|---|---|
-| **CSV** | Spreadsheets, generic tooling | Free |
-| **JSON** | APIs, document stores | Free |
-| **SQL** | `INSERT` statements (SQL databases) | PRO |
-| **Excel** | `.xlsx` workbook | PRO |
+| Format | Use |
+|---|---|
+| **CSV** | Spreadsheets, generic tooling |
+| **JSON** | APIs, document stores |
+| **SQL** | `INSERT` statements (SQL databases) |
+| **Excel** | `.xlsx` workbook |
 
 <Steps>
   <Step title="Open a table or run a query" />
@@ -21,8 +21,6 @@ Click **Export** on a result or table and choose a format:
 </Steps>
 
 ![Export dialog](/images/06-import-export/export.png)
-
-<Note>SQL and Excel export are PRO, and **exporting more than one table at once** (multi-table export) is PRO. CSV and JSON export of a single result or table are free.</Note>
 
 <Tip>**Export what you see.** Filtered exports respect the filters applied in the grid; only the matching rows are written.</Tip>
 
@@ -37,16 +35,16 @@ Bring a file into a table:
   <Step title="Run the import" />
 </Steps>
 
-| Format | License |
-|---|---|
-| **CSV** | Free |
-| **JSON** | Free |
-| **SQL** (run a `.sql` file of statements) | PRO |
+| Format |
+|---|
+| **CSV** |
+| **JSON** |
+| **SQL** (run a `.sql` file of statements) |
 
 ![Import flow](/images/06-import-export/import.png)
 
-<Note>SQL import is PRO; CSV and JSON import are free. Excel is export-only, there is no `.xlsx` import.</Note>
+<Note>Excel is export-only, there is no `.xlsx` import.</Note>
 
 <Card title="Whole-database backups" icon="database" href="/backup-and-restore">
-Import and export move per-table data. To copy or restore an entire database, use Backup and restore (PRO).
+Import and export move per-table data. To copy or restore an entire database, use Backup and restore.
 </Card>
