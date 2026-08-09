@@ -36,6 +36,56 @@ One workspace to browse, query, edit, visualize, and manage your databases, with
 - **Native and fast** - a lightweight desktop app, not a browser tab, for every major platform.
 - **Private by default** - your connections and data stay on your machine. No telemetry.
 
+## Supported databases
+
+Every engine uses the same connect, browse, query, and edit flow - there is nothing new to learn as the list grows.
+
+**✅ Available today**
+
+<p>
+  <img src="https://img.shields.io/badge/PostgreSQL-16a34a?style=for-the-badge&logo=postgresql&logoColor=white" alt="PostgreSQL" />
+  <img src="https://img.shields.io/badge/MySQL%20%2F%20MariaDB-16a34a?style=for-the-badge&logo=mysql&logoColor=white" alt="MySQL / MariaDB" />
+  <img src="https://img.shields.io/badge/SQLite-16a34a?style=for-the-badge&logo=sqlite&logoColor=white" alt="SQLite" />
+  <img src="https://img.shields.io/badge/MongoDB-16a34a?style=for-the-badge&logo=mongodb&logoColor=white" alt="MongoDB" />
+  <img src="https://img.shields.io/badge/Redis-16a34a?style=for-the-badge&logo=redis&logoColor=white" alt="Redis" />
+</p>
+
+**🚧 On the roadmap**
+
+<table>
+  <tr>
+    <td><b>Next up</b></td>
+    <td>
+      <img src="https://img.shields.io/badge/SQL%20Server-f59e0b?style=flat-square&logo=microsoftsqlserver&logoColor=white" alt="Microsoft SQL Server" />
+      <img src="https://img.shields.io/badge/Oracle-f59e0b?style=flat-square&logo=oracle&logoColor=white" alt="Oracle" />
+      <img src="https://img.shields.io/badge/CockroachDB-f59e0b?style=flat-square&logo=cockroachlabs&logoColor=white" alt="CockroachDB" />
+      <img src="https://img.shields.io/badge/ClickHouse-f59e0b?style=flat-square&logo=clickhouse&logoColor=white" alt="ClickHouse" />
+      <img src="https://img.shields.io/badge/DuckDB-f59e0b?style=flat-square&logo=duckdb&logoColor=white" alt="DuckDB" />
+    </td>
+  </tr>
+  <tr>
+    <td><b>Planned</b></td>
+    <td>
+      <img src="https://img.shields.io/badge/Redshift-6366f1?style=flat-square&logo=amazonredshift&logoColor=white" alt="Redshift" />
+      <img src="https://img.shields.io/badge/Snowflake-6366f1?style=flat-square&logo=snowflake&logoColor=white" alt="Snowflake" />
+      <img src="https://img.shields.io/badge/BigQuery-6366f1?style=flat-square&logo=googlebigquery&logoColor=white" alt="BigQuery" />
+      <img src="https://img.shields.io/badge/Supabase-6366f1?style=flat-square&logo=supabase&logoColor=white" alt="Supabase" />
+      <img src="https://img.shields.io/badge/TimescaleDB-6366f1?style=flat-square&logo=timescale&logoColor=white" alt="TimescaleDB" />
+    </td>
+  </tr>
+  <tr>
+    <td><b>Considering</b></td>
+    <td>
+      <img src="https://img.shields.io/badge/Cassandra-64748b?style=flat-square&logo=apachecassandra&logoColor=white" alt="Cassandra" />
+      <img src="https://img.shields.io/badge/Elasticsearch-64748b?style=flat-square&logo=elasticsearch&logoColor=white" alt="Elasticsearch" />
+      <img src="https://img.shields.io/badge/DynamoDB-64748b?style=flat-square&logo=amazondynamodb&logoColor=white" alt="DynamoDB" />
+      <img src="https://img.shields.io/badge/InfluxDB-64748b?style=flat-square&logo=influxdb&logoColor=white" alt="InfluxDB" />
+    </td>
+  </tr>
+</table>
+
+> **Want one sooner?** [Open a feature request](../../issues/new?template=feature_request.yml) and we will prioritize it. See the [full list with details](https://docs.flextable.dev) in the docs.
+
 ## Features
 
 | Area | What you get |

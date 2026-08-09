@@ -11,16 +11,41 @@ description: FlexTable is a fast, native desktop client for PostgreSQL, MySQL, S
 
 FlexTable speaks both SQL and NoSQL with a consistent interface.
 
-| Database | Highlights |
-|---|---|
-| **PostgreSQL** | Schemas, types, indexes, foreign keys, `ILIKE` search |
-| **MySQL / MariaDB** | Collation-aware, full schema browsing |
-| **SQLite** | File-based, zero-config, just open the file |
-| **MongoDB** | Documents, Extended JSON, shell-style queries |
-| **Redis** | Keyspace browser with TTLs, every value type, and live Pub/Sub |
+### Supported today
+
+These engines are fully supported. Every one uses the same connect, browse, query, and edit flow.
+
+| Database | Type | Highlights |
+|---|---|---|
+| **PostgreSQL** | Relational (SQL) | Schemas, types, indexes, foreign keys, `ILIKE` search |
+| **MySQL / MariaDB** | Relational (SQL) | Collation-aware, full schema browsing |
+| **SQLite** | Relational (SQL) | File-based, zero-config, just open the file |
+| **MongoDB** | Document (NoSQL) | Documents, Extended JSON, shell-style queries |
+| **Redis** | Key-value (NoSQL) | Keyspace browser with TTLs, every value type, and live Pub/Sub |
+
+### On the roadmap
+
+New engines work the same way as the ones you already know, so there is nothing new to learn as the list grows. The databases below are planned, not yet available.
+
+| Database | Type | Status |
+|---|---|---|
+| **Microsoft SQL Server** | Relational (SQL) | Next up |
+| **Oracle** | Relational (SQL) | Next up |
+| **CockroachDB** | Distributed SQL | Next up |
+| **ClickHouse** | Analytical (OLAP) | Next up |
+| **DuckDB** | Analytical (OLAP) | Next up |
+| **Redshift** | Data warehouse | Planned |
+| **Snowflake** | Data warehouse | Planned |
+| **BigQuery** | Data warehouse | Planned |
+| **Supabase** | Postgres platform | Planned |
+| **TimescaleDB** | Time-series (Postgres) | Planned |
+| **Cassandra** | Wide-column (NoSQL) | Considering |
+| **Elasticsearch** | Search / document | Considering |
+| **DynamoDB** | Key-value (NoSQL) | Considering |
+| **InfluxDB** | Time-series | Considering |
 
 <Note>
-**The list keeps growing.** New engines work the same way as the ones you already know, so there is nothing new to learn. On the roadmap: Microsoft SQL Server, Oracle, CockroachDB, Redshift, Supabase, ClickHouse, DuckDB, Snowflake, BigQuery, Cassandra, Elasticsearch, DynamoDB, InfluxDB, TimescaleDB, and more. Want one sooner? Tell us and we will prioritize it.
+**Want one sooner?** Tell us which engine you need and we will prioritize it. [Open a feature request](https://github.com/flex-table/flextable/issues/new?template=feature_request.yml) or start a [discussion](https://github.com/flex-table/flextable/discussions).
 </Note>
 
 ## What you can do
