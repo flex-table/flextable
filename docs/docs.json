@@ -3,6 +3,11 @@
   "theme": "mint",
   "name": "FlexTable",
   "description": "FlexTable is a fast, native desktop client for PostgreSQL, MySQL, SQLite, MongoDB, Redis, and more engines on the way.",
+  "logo": {
+    "light": "/logo/logo-mark.png",
+    "dark": "/logo/logo-mark.png",
+    "href": "https://flextable.dev"
+  },
   "colors": {
     "primary": "#4f46e5",
     "light": "#6366f1",
