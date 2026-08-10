@@ -55,7 +55,9 @@
     ]
   },
   "navbar": {
-    "links": [{ "label": "FlexTable", "href": "https://flextable.dev" }]
+    "links": [
+      { "label": "Support", "icon": "envelope", "href": "mailto:support@flextable.dev" }
+    ]
   },
   "footer": {
     "socials": {
