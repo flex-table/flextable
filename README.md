@@ -4,7 +4,7 @@
 
 # FlexTable
 
-**A fast, native desktop database client for PostgreSQL, MySQL, SQLite, MongoDB, and Redis.**
+**A fast, native desktop database client for PostgreSQL, MySQL, MariaDB, SQL Server, Oracle, CockroachDB, Amazon Redshift, ClickHouse, SQLite, MongoDB, and Redis.**
 
 One workspace to browse, query, edit, visualize, and manage your databases, with SQL and NoSQL side by side.
 
@@ -30,7 +30,7 @@ One workspace to browse, query, edit, visualize, and manage your databases, with
 
 ## Why FlexTable
 
-- **One editor for SQL and NoSQL** - write SQL for PostgreSQL, MySQL, and SQLite, shell-style queries for MongoDB, and commands for Redis, all in the same schema-aware editor with autocomplete.
+- **One editor for SQL and NoSQL** - write SQL for PostgreSQL, MySQL, SQL Server, Oracle, CockroachDB, Amazon Redshift, ClickHouse and SQLite, shell-style queries for MongoDB, and commands for Redis, all in the same schema-aware editor with autocomplete.
 - **Built for real data** - a virtualized grid that scrolls smoothly through millions of rows, with sort, filter, and a rich cell inspector (Formatted, JSON, Markdown, HTML, or Raw).
 - **Safe, reviewable edits** - inline edits are staged and highlighted, then committed together as a single transaction. Review before anything hits the database, or roll back.
 - **Native and fast** - a lightweight desktop app, not a browser tab, for every major platform.
@@ -45,6 +45,11 @@ Every engine uses the same connect, browse, query, and edit flow - there is noth
 <p>
   <img src="https://img.shields.io/badge/PostgreSQL-16a34a?style=for-the-badge&logo=postgresql&logoColor=white" alt="PostgreSQL" />
   <img src="https://img.shields.io/badge/MySQL%20%2F%20MariaDB-16a34a?style=for-the-badge&logo=mysql&logoColor=white" alt="MySQL / MariaDB" />
+  <img src="https://img.shields.io/badge/SQL%20Server-16a34a?style=for-the-badge&logo=microsoftsqlserver&logoColor=white" alt="Microsoft SQL Server" />
+  <img src="https://img.shields.io/badge/Oracle-16a34a?style=for-the-badge&logo=oracle&logoColor=white" alt="Oracle" />
+  <img src="https://img.shields.io/badge/CockroachDB-16a34a?style=for-the-badge&logo=cockroachlabs&logoColor=white" alt="CockroachDB" />
+  <img src="https://img.shields.io/badge/Amazon%20Redshift-16a34a?style=for-the-badge&logo=amazonredshift&logoColor=white" alt="Amazon Redshift" />
+  <img src="https://img.shields.io/badge/ClickHouse-16a34a?style=for-the-badge&logo=clickhouse&logoColor=white" alt="ClickHouse" />
   <img src="https://img.shields.io/badge/SQLite-16a34a?style=for-the-badge&logo=sqlite&logoColor=white" alt="SQLite" />
   <img src="https://img.shields.io/badge/MongoDB-16a34a?style=for-the-badge&logo=mongodb&logoColor=white" alt="MongoDB" />
   <img src="https://img.shields.io/badge/Redis-16a34a?style=for-the-badge&logo=redis&logoColor=white" alt="Redis" />
@@ -56,17 +61,12 @@ Every engine uses the same connect, browse, query, and edit flow - there is noth
   <tr>
     <td><b>Next up</b></td>
     <td>
-      <img src="https://img.shields.io/badge/SQL%20Server-f59e0b?style=flat-square&logo=microsoftsqlserver&logoColor=white" alt="Microsoft SQL Server" />
-      <img src="https://img.shields.io/badge/Oracle-f59e0b?style=flat-square&logo=oracle&logoColor=white" alt="Oracle" />
-      <img src="https://img.shields.io/badge/CockroachDB-f59e0b?style=flat-square&logo=cockroachlabs&logoColor=white" alt="CockroachDB" />
-      <img src="https://img.shields.io/badge/ClickHouse-f59e0b?style=flat-square&logo=clickhouse&logoColor=white" alt="ClickHouse" />
       <img src="https://img.shields.io/badge/DuckDB-f59e0b?style=flat-square&logo=duckdb&logoColor=white" alt="DuckDB" />
     </td>
   </tr>
   <tr>
     <td><b>Planned</b></td>
     <td>
-      <img src="https://img.shields.io/badge/Redshift-6366f1?style=flat-square&logo=amazonredshift&logoColor=white" alt="Redshift" />
       <img src="https://img.shields.io/badge/Snowflake-6366f1?style=flat-square&logo=snowflake&logoColor=white" alt="Snowflake" />
       <img src="https://img.shields.io/badge/BigQuery-6366f1?style=flat-square&logo=googlebigquery&logoColor=white" alt="BigQuery" />
       <img src="https://img.shields.io/badge/Supabase-6366f1?style=flat-square&logo=supabase&logoColor=white" alt="Supabase" />
@@ -90,7 +90,7 @@ Every engine uses the same connect, browse, query, and edit flow - there is noth
 
 | Area | What you get |
 |---|---|
-| **Connect** | PostgreSQL, MySQL, SQLite, MongoDB, Redis. Organize connections into folders, favorite them, and see status at a glance. |
+| **Connect** | PostgreSQL, MySQL, MariaDB, SQL Server, Oracle, CockroachDB, Amazon Redshift, ClickHouse, SQLite, MongoDB, Redis. Organize connections into folders, favorite them, and see status at a glance. |
 | **Secure** | SSL/TLS, SSH tunneling, and AWS RDS IAM authentication. |
 | **Query** | Schema-aware autocomplete, SQL formatting, cancellable runs, saved queries with folders, and full run history. |
 | **Browse & edit** | Fast data grid, powerful filters, a rich cell viewer, and staged edits with a transaction-mode toggle. |

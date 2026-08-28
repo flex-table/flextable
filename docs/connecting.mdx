@@ -1,6 +1,6 @@
 ---
 title: Connect to a database
-description: How to connect FlexTable to PostgreSQL, MySQL, SQLite, MongoDB, Redis, and more engines as they land.
+description: How to connect FlexTable to PostgreSQL, MySQL, MariaDB, SQL Server, Oracle, CockroachDB, Amazon Redshift, ClickHouse, SQLite, MongoDB, and Redis.
 ---
 
 Every engine uses the same flow: **+ New Connection -> pick a type -> fill the form -> Test -> Save**, with fields that match that engine. New databases follow the same flow as they are added.
@@ -60,6 +60,45 @@ Every engine uses the same flow: **+ New Connection -> pick a type -> fill the f
     | Database index | `0`-`15` |
 
     ![Redis form](/images/02-connecting/redis.png)
+  </Tab>
+  <Tab title="SQL Server">
+    | Field | Notes |
+    |---|---|
+    | Host / Port | e.g. `localhost` / `1433` |
+    | Database | target database |
+    | Username / Password | SQL Server authentication |
+  </Tab>
+  <Tab title="Oracle">
+    | Field | Notes |
+    |---|---|
+    | Host / Port | e.g. `localhost` / `1521` |
+    | Service name / SID | your Oracle service |
+    | Username / Password | database credentials |
+  </Tab>
+  <Tab title="CockroachDB">
+    CockroachDB is PostgreSQL-wire compatible, so it connects like Postgres.
+
+    | Field | Notes |
+    |---|---|
+    | Host / Port | e.g. `localhost` / `26257` |
+    | Database | target database |
+    | Username / Password | SQL user (TLS is often required) |
+  </Tab>
+  <Tab title="Amazon Redshift">
+    Redshift speaks the PostgreSQL protocol.
+
+    | Field | Notes |
+    |---|---|
+    | Host / Port | your cluster endpoint / `5439` |
+    | Database | target database |
+    | Username / Password | database credentials |
+  </Tab>
+  <Tab title="ClickHouse">
+    | Field | Notes |
+    |---|---|
+    | Host / Port | e.g. `localhost` / `8123` (HTTP) or `9000` (native) |
+    | Database | defaults to `default` |
+    | Username / Password | e.g. `default` and your password |
   </Tab>
 </Tabs>
 

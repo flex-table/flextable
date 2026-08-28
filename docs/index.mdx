@@ -1,6 +1,6 @@
 ---
 title: Introduction
-description: FlexTable is a fast, native desktop client for PostgreSQL, MySQL, SQLite, MongoDB, Redis, and more engines on the way.
+description: FlexTable is a fast, native desktop client for PostgreSQL, MySQL, MariaDB, SQL Server, Oracle, CockroachDB, Amazon Redshift, ClickHouse, SQLite, MongoDB, and Redis.
 ---
 
 **FlexTable** is a desktop database client for developers and DBAs. Connect to your databases, browse and edit data, write and run queries, visualize results, and move data in and out, all from one fast, native app.
@@ -19,6 +19,11 @@ These engines are fully supported. Every one uses the same connect, browse, quer
 |---|---|---|
 | **PostgreSQL** | Relational (SQL) | Schemas, types, indexes, foreign keys, `ILIKE` search |
 | **MySQL / MariaDB** | Relational (SQL) | Collation-aware, full schema browsing |
+| **Microsoft SQL Server** | Relational (SQL) | T-SQL, full schema browsing |
+| **Oracle** | Relational (SQL) | Schema browsing, SQL editor |
+| **CockroachDB** | Distributed SQL | Postgres-wire compatible, distributed |
+| **Amazon Redshift** | Data warehouse (SQL) | Postgres-based columnar warehouse |
+| **ClickHouse** | Analytical (OLAP) | Fast columnar analytics |
 | **SQLite** | Relational (SQL) | File-based, zero-config, just open the file |
 | **MongoDB** | Document (NoSQL) | Documents, Extended JSON, shell-style queries |
 | **Redis** | Key-value (NoSQL) | Keyspace browser with TTLs, every value type, and live Pub/Sub |
@@ -29,12 +34,7 @@ New engines work the same way as the ones you already know, so there is nothing 
 
 | Database | Type | Status |
 |---|---|---|
-| **Microsoft SQL Server** | Relational (SQL) | Next up |
-| **Oracle** | Relational (SQL) | Next up |
-| **CockroachDB** | Distributed SQL | Next up |
-| **ClickHouse** | Analytical (OLAP) | Next up |
 | **DuckDB** | Analytical (OLAP) | Next up |
-| **Redshift** | Data warehouse | Planned |
 | **Snowflake** | Data warehouse | Planned |
 | **BigQuery** | Data warehouse | Planned |
 | **Supabase** | Postgres platform | Planned |
