@@ -1,0 +1,75 @@
+---
+title: Oracle
+description: Connect to Oracle in FlexTable - choosing an Instant Client, using your own installation, and fixing common login errors.
+---
+
+Oracle works like the rest of FlexTable ([connect](/connecting), [browse and edit](/browse-and-edit), [query](/query-editor)). This page covers what is specific to Oracle, and most of that is the **Instant Client** - a library Oracle requires and the other engines do not.
+
+## Oracle needs a client library
+
+Oracle connections go through Oracle's own **Instant Client**. FlexTable does not ship it inside the installer; the connection form shows a **Download driver** step when the client you selected is missing, and fetches it for you.
+
+The download is Oracle software governed by Oracle's licence, which is linked next to the download button.
+
+## Choosing a client version
+
+No single Instant Client reaches every Oracle server, so the version is part of each connection (connection form, Oracle options):
+
+| Client       | Reaches               | How you get it                                                          |
+| ------------ | --------------------- | ----------------------------------------------------------------------- |
+| **23** (default) | Oracle 19c and newer  | Downloaded for you. On Apple Silicon Macs this is the only client Oracle publishes. |
+| **19**       | Oracle 11.2 to 23ai   | You install it (see below). Oracle publishes no 19 client for Apple Silicon. |
+| **11.2**     | Oracle 10g and 11g    | You install it (see below). Windows and Linux only.                      |
+
+Stay on 23 unless the server refuses your login - see [Older servers that reject the login](#older-servers-that-reject-the-login).
+
+## Using your own Instant Client
+
+FlexTable distributes client 23 only. To use 19 or 11.2:
+
+1. Download **Instant Client Basic** for your platform from [Oracle](https://www.oracle.com/database/technologies/instant-client/downloads.html).
+2. Unpack it anywhere you like.
+3. In the connection's Oracle options, select that client version and point FlexTable at the unpacked folder - the folder that directly contains `libclntsh.so` (Linux), `libclntsh.dylib` (macOS), or `oci.dll` (Windows).
+
+If the folder does not hold that library, FlexTable says so rather than quietly falling back to a different client. It also checks the version that actually loaded: if you select 19 and the folder holds a 23 client, the connection stops with an explanation instead of failing later with a confusing login error.
+
+## Changing the client version needs a restart
+
+Oracle's client library loads **once per application session**, so a connection cannot switch to a different version while FlexTable is running. When you change it, FlexTable asks you to restart, and offers to do it for you.
+
+## Linux
+
+The Instant Client links against `libaio`. If a connection fails with `DPI-1047`, install it:
+
+```bash
+sudo apt install libaio1   # Debian, Ubuntu (on 24.04 the package is libaio1t64)
+sudo dnf install libaio    # Fedora, RHEL
+```
+
+## Older servers that reject the login
+
+An Oracle server still using old password verifiers can refuse a modern client with **ORA-28040** or **ORA-28041**. Work through these in order:
+
+1. **Select an older client** - 19 for most cases, 11.2 for 10g and 11g servers - then restart.
+2. If the login is still refused, enable **Allow legacy Oracle authentication** in the connection's Oracle options and restart.
+
+<Warning>
+  Legacy authentication makes the client accept old, weak password verifiers. Because Oracle's client
+  loads once per session, it lowers the standard for **every** Oracle connection until you restart
+  FlexTable - not just this one. Turn it on only for a server that needs it, and prefer an encrypted
+  connection when you do.
+</Warning>
+
+## Databases and schemas
+
+Oracle's **database** selector lists pluggable databases (PDBs) and the **schema** selector lists users, so browsing works the same way as Postgres's database and schema pair. Schemas Oracle maintains itself are hidden until you turn on system schemas.
+
+## Troubleshooting
+
+| You see                                     | What it means                                                                                             |
+| ------------------------------------------- | --------------------------------------------------------------------------------------------------------- |
+| `ORA-28040` or `ORA-28041`                  | Client and server disagree on the login protocol. Try an older client, then legacy authentication.          |
+| `DPI-1047`                                  | The client library could not load. On Linux, install `libaio`.                                              |
+| Instant Client is not installed             | The version this connection selected is not present. Download it, or point FlexTable at your own folder.    |
+| A different client version is already loaded | Oracle loads one client per session. Restart FlexTable, then connect.                                       |
+| The loaded client is not the selected version | The folder you pointed at holds a different version. Point at a matching one, or select the version you have. |

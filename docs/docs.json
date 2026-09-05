@@ -41,7 +41,8 @@
           "guides/mysql",
           "guides/sqlite",
           "guides/mongodb",
-          "guides/redis"
+          "guides/redis",
+          "guides/oracle"
         ]
       },
       {
