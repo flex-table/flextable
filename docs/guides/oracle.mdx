@@ -13,15 +13,22 @@ The download is Oracle software governed by Oracle's licence, which is linked ne
 
 ## Choosing a client version
 
-No single Instant Client reaches every Oracle server, so the version is part of each connection (connection form, Oracle options):
+**Start on 23ai and only change this if a connection is actually refused.** An older server does
+not on its own need an older client - we have connected the 23ai client to an Oracle 11.2 server
+without trouble. What decides the handshake is the logon-protocol policy configured on each side
+and the password verifier stored for your account, none of which you can tell by looking at the
+server's version number. So there is nothing to work out in advance: try, and change only if
+Oracle says no.
 
-| Client       | Reaches               | How you get it                                                          |
-| ------------ | --------------------- | ----------------------------------------------------------------------- |
-| **23** (default) | Oracle 19c and newer  | Downloaded for you. On Apple Silicon Macs this is the only client Oracle publishes. |
-| **19**       | Oracle 11.2 to 23ai   | You install it (see below). Oracle publishes no 19 client for Apple Silicon. |
-| **11.2**     | Oracle 10g and 11g    | You install it (see below). Windows and Linux only.                      |
+| Client           | Reach it is published for | How you get it                                                                       |
+| ---------------- | ------------------------- | ------------------------------------------------------------------------------------ |
+| **23ai** (default) | Oracle 19c and newer      | Downloaded for you. On Apple Silicon this is the only client Oracle publishes at all.  |
+| **19c**          | Oracle 11.2 to 23ai       | You install it (see below). No 19c client exists for Apple Silicon.                    |
+| **11.2**         | Oracle 10g and 11g        | You install it (see below). Windows and Linux only.                                    |
 
-Stay on 23 unless the server refuses your login - see [Older servers that reject the login](#older-servers-that-reject-the-login).
+The "reach" column is Oracle's support statement, not a promise that anything outside it will fail -
+in practice 23ai often works well past it. Treat it as the order to step down in when a login IS
+refused: see [Older servers that reject the login](#older-servers-that-reject-the-login).
 
 ## Using your own Instant Client
 
@@ -48,7 +55,10 @@ sudo dnf install libaio    # Fedora, RHEL
 
 ## Older servers that reject the login
 
-An Oracle server still using old password verifiers can refuse a modern client with **ORA-28040** or **ORA-28041**. Work through these in order:
+A login can be refused with **ORA-28040** or **ORA-28041** when the client and the server cannot
+agree on a login protocol - typically a client or server configured to demand a newer protocol than
+the other side offers, or an account still carrying only an old password verifier. Work through
+these in order:
 
 1. **Select an older client** - 19 for most cases, 11.2 for 10g and 11g servers - then restart.
 2. If the login is still refused, enable **Allow legacy Oracle authentication** in the connection's Oracle options and restart.
