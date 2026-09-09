@@ -57,12 +57,14 @@
   },
   "navbar": {
     "links": [
+      { "label": "Discord", "icon": "discord", "href": "https://discord.gg/EhmRcCq4N" },
       { "label": "Support", "icon": "envelope", "href": "mailto:support@flextable.dev" }
     ]
   },
   "footer": {
     "socials": {
-      "github": "https://github.com/flex-table/flextable"
+      "github": "https://github.com/flex-table/flextable",
+      "discord": "https://discord.gg/EhmRcCq4N"
     },
     "links": [
       {
