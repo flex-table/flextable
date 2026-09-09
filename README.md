@@ -12,6 +12,7 @@ One workspace to browse, query, edit, visualize, and manage your databases, with
   <a href="https://docs.flextable.dev"><img src="https://img.shields.io/badge/Documentation-docs.flextable.dev-4f46e5?style=for-the-badge&logo=readthedocs&logoColor=white" alt="Documentation" /></a>
   <a href="https://flextable.dev/download"><img src="https://img.shields.io/badge/Download-flextable.dev-16a34a?style=for-the-badge" alt="Download" /></a>
   <a href="https://flextable.dev/changelog"><img src="https://img.shields.io/badge/Changelog-Release%20notes-8b5cf6?style=for-the-badge&logo=git&logoColor=white" alt="Changelog" /></a>
+  <a href="https://discord.gg/EhmRcCq4N"><img src="https://img.shields.io/badge/Discord-Community-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Discord" /></a>
   <a href="../../issues/new/choose"><img src="https://img.shields.io/badge/Issues-Report%20%2F%20Request-ef4444?style=for-the-badge&logo=github&logoColor=white" alt="Issues" /></a>
 </p>
 
