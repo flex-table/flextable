@@ -124,7 +124,7 @@ Full guides live at **[docs.flextable.dev](https://docs.flextable.dev)** - insta
 
 - **Found a bug?** [Open a bug report](../../issues/new?template=bug_report.yml)
 - **Have an idea?** [Open a feature request](../../issues/new?template=feature_request.yml)
-- **Question or general feedback?** [Start a discussion](../../discussions)
+- **Question or general feedback?** [Ask on Discord](https://discord.gg/EhmRcCq4N)
 
 When reporting a bug, please include your **FlexTable version**, **OS**, and the **database engine** involved - it makes fixes much faster.
 
@@ -138,4 +138,4 @@ FlexTable runs entirely on your machine and talks only to the databases and the 
 - Documentation: [docs.flextable.dev](https://docs.flextable.dev)
 - Download: [flextable.dev/download](https://flextable.dev/download)
 - Changelog: [flextable.dev/changelog](https://flextable.dev/changelog)
-- Community: [Discussions](../../discussions)
+- Community: [Discord](https://discord.gg/EhmRcCq4N)
