@@ -14,6 +14,7 @@ One workspace to browse, query, edit, visualize, and manage your databases, with
   <a href="https://flextable.dev/changelog"><img src="https://img.shields.io/badge/Changelog-Release%20notes-8b5cf6?style=for-the-badge&logo=git&logoColor=white" alt="Changelog" /></a>
   <a href="https://discord.gg/EhmRcCq4N"><img src="https://img.shields.io/badge/Discord-Community-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Discord" /></a>
   <a href="../../issues/new/choose"><img src="https://img.shields.io/badge/Issues-Report%20%2F%20Request-ef4444?style=for-the-badge&logo=github&logoColor=white" alt="Issues" /></a>
+  <a href="https://www.buymeacoffee.com/vanhao1915x"><img src="https://img.shields.io/badge/Sponsor-Buy%20me%20a%20coffee-FFDD00?style=for-the-badge&logo=buymeacoffee&logoColor=black" alt="Sponsor - Buy me a coffee" /></a>
 </p>
 
 <p>
@@ -131,6 +132,14 @@ When reporting a bug, please include your **FlexTable version**, **OS**, and the
 ## Security & privacy
 
 FlexTable runs entirely on your machine and talks only to the databases and the AI provider you configure. Connection details are stored locally and encrypted at rest, and the app ships with **no analytics or telemetry**. AI keys are never routed through FlexTable. See [Security and privacy](https://docs.flextable.dev/security-and-privacy) for details.
+
+## Support FlexTable
+
+FlexTable is free during beta and built by a small team. If it saves you time, you can support continued development - it helps ship new database engines and features faster.
+
+<a href="https://www.buymeacoffee.com/vanhao1915x"><img src="https://img.shields.io/badge/Buy%20me%20a%20coffee-support%20development-FFDD00?style=for-the-badge&logo=buymeacoffee&logoColor=black" alt="Buy me a coffee" /></a>
+
+Not into coffee? Starring the repo and sharing FlexTable helps just as much.
 
 ## Links
 
