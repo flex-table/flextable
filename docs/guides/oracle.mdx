@@ -57,8 +57,17 @@ sudo dnf install libaio    # Fedora, RHEL
 
 A login can be refused with **ORA-28040** or **ORA-28041** when the client and the server cannot
 agree on a login protocol - typically a client or server configured to demand a newer protocol than
-the other side offers, or an account still carrying only an old password verifier. Work through
-these in order:
+the other side offers, or an account still carrying only an old password verifier.
+
+<Note>
+  **On Windows, update FlexTable first.** FlexTable 0.11.0 to 0.12.0 on Windows failed every Oracle login
+  with ORA-28041 when using the Instant Client that FlexTable downloads, even against modern servers.
+  That was a FlexTable bug, fixed in **0.13.0**. If you see ORA-28041 against a server that other clients
+  reach fine, update to FlexTable 0.13.0 or later before trying the steps below. Selecting an older client
+  or enabling legacy authentication does not fix it. macOS and Linux were never affected.
+</Note>
+
+Otherwise, work through these in order:
 
 1. **Select an older client** - 19 for most cases, 11.2 for 10g and 11g servers - then restart.
 2. If the login is still refused, enable **Allow legacy Oracle authentication** in the connection's Oracle options and restart.
@@ -78,6 +87,7 @@ Oracle's **database** selector lists pluggable databases (PDBs) and the **schema
 
 | You see                                     | What it means                                                                                             |
 | ------------------------------------------- | --------------------------------------------------------------------------------------------------------- |
+| `ORA-28041` on Windows, server fine elsewhere | A bug in FlexTable 0.11.0 to 0.12.0 on Windows. Update to FlexTable 0.13.0 or later. |
 | `ORA-28040` or `ORA-28041`                  | Client and server disagree on the login protocol. Try an older client, then legacy authentication.          |
 | `DPI-1047`                                  | The client library could not load. On Linux, install `libaio`.                                              |
 | Instant Client is not installed             | The version this connection selected is not present. Download it, or point FlexTable at your own folder.    |

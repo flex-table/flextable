@@ -45,6 +45,12 @@ Bring a file into a table:
 
 <Note>Excel is export-only, there is no `.xlsx` import.</Note>
 
+Only one import runs at a time. If you start another while one is still running, FlexTable refuses it with "Another import is still running. Wait for it to finish or stop." The import dialog stays open, so nothing you entered is lost.
+
+## Stop an import or export
+
+You can stop an import or export while it runs. FlexTable reports the outcome the same way the query editor does (see [Stop a running query](/query-editor#stop-a-running-query)). For example, an import that was **stopped partway** may already have saved some rows, so check the table before running it again.
+
 <Card title="Whole-database backups" icon="database" href="/backup-and-restore">
 Import and export move per-table data. To copy or restore an entire database, use Backup and restore.
 </Card>

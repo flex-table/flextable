@@ -17,6 +17,9 @@ Most connection problems come from the host, credentials, or transport. Use **Te
   <Accordion title="SSL / TLS errors">
     Match the SSL mode to your server. Managed and cloud databases usually need `verify-full` with a CA certificate. See [Secure connections](/secure-connections#ssl--tls).
   </Accordion>
+  <Accordion title="Oracle login fails with ORA-28041 on Windows">
+    FlexTable 0.11.0 to 0.12.0 on Windows had a bug that caused this against any server. Update to FlexTable 0.13.0 or later. See [Older servers that reject the login](/guides/oracle#older-servers-that-reject-the-login).
+  </Accordion>
 </AccordionGroup>
 
 ## Updates

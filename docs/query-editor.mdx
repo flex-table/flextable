@@ -42,7 +42,23 @@ Press **Cmd/Ctrl + Enter** (or the **Run** button) to execute. Results stream in
 
 ![Result grid with filter](/images/03-browsing/filter.png)
 
-<Tip>**Cancellable.** A long-running query can be stopped; the **Run** button becomes **Stop** while it executes.</Tip>
+## Stop a running query
+
+A long-running query can be stopped: the **Run** button becomes **Stop** while it executes. While the stop is in progress the editor shows **Stopping query...** ("Waiting for the database to answer. This can take a few seconds.").
+
+FlexTable then tells you what actually happened, in the status bar and, when it matters, as a one-line strip in the result pane:
+
+| Outcome | What it means |
+|---|---|
+| **Query stopped** (for a write: "Query stopped. Nothing was saved") | The database confirmed the query stopped before saving anything. |
+| **Query stopped and the transaction was rolled back** | Nothing from this query was saved. The open transaction was rolled back too, so changes made earlier in it that were not committed are gone. The tab is no longer in a transaction. |
+| **Query stopped partway** | The database stopped the query, but work that ran before the stop may already be saved. Check the data before running it again. |
+| **Stop sent, not confirmed** | The database got the stop request but did not say whether the query stopped or finished. For a write, its changes may be saved, fully or in part. |
+| **Too late to stop: the query finished** | The query completed before the stop arrived. For a write, its changes are saved, and running it again applies them a second time. |
+
+<Warning>**Re-running after a stop.** When changes may already be saved, running the same query again first asks **Run this query again?** ("Running it again may apply the same changes twice."). Choose **Run anyway** to go ahead or **Cancel** to check the data first.</Warning>
+
+The same outcomes apply when you stop a table load, an [import or an export](/import-and-export).
 
 ## Saved queries and history
 
