@@ -1,0 +1,30 @@
+name: Task
+description: Planned work that is neither a bug nor a feature (tests, CI, release, infrastructure, docs)
+labels: [enhancement]
+body:
+  - type: textarea
+    id: context
+    attributes:
+      label: Context
+      description: Where this comes from and why it matters now.
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What is missing or wrong today.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposal
+      description: The intended change, and options considered.
+  - type: textarea
+    id: done
+    attributes:
+      label: Done when
+      description: A checklist that makes the task verifiably finished.
+      placeholder: |
+        - [ ] ...
