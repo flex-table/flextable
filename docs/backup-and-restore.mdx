@@ -27,6 +27,8 @@ Backups use each engine's native client tools (`pg_dump` / `pg_restore`, `mysqld
 
 ![Backup options per engine](/images/11-backup-restore/options.png)
 
+<Note>**Oracle:** the backup cannot export the data of some column types yet (`BLOB`, `CLOB`, `NCLOB`, `JSON`, `BOOLEAN`, `INTERVAL` and `TIMESTAMP WITH (LOCAL) TIME ZONE`). If the scope you choose contains one, FlexTable stops before it starts and lists the columns, so you can narrow the backup to a schema without them.</Note>
+
 ## Restore
 
 <Steps>
