@@ -33,3 +33,7 @@ The only times FlexTable talks to the network, none of which is telemetry:
 - **Update checks** with `api.flextable.dev` (version and architecture only).
 - **Feedback** you explicitly submit from the feedback dialog (your message, plus optional app version/OS and email). Nothing is sent unless you fill it in and click submit.
 - **AI requests** go directly to the provider you configured, with your own key, never through FlexTable servers. See [AI Assistant](/ai-assistant).
+
+## MCP server
+
+The [MCP server](/mcp-server) is off until you turn it on. It listens only on your computer (`127.0.0.1`) and needs an access token, so agents on other machines cannot reach it. Agents see only the connections you mark **Expose to agents**, never their host, user name, or password. Their queries run read-only, and every change to data waits for your approval in the app.
