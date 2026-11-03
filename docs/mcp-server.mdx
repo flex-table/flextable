@@ -1,0 +1,123 @@
+---
+title: MCP server
+description: Let coding agents on your computer use your FlexTable connections, with read-only queries and every data change approved by you.
+---
+
+FlexTable can act as an **MCP server**, so the coding agents you run on your own computer (such as Claude Code, Cursor, Codex, Gemini CLI, or VS Code) can use the database connections you choose. An agent can list tables, read schemas, and run queries.
+
+- **Reads are read-only.** Queries from an agent run in the database's own read-only mode where the engine has one.
+- **You approve every change.** Any change to data waits until you approve the exact statement in FlexTable.
+- **Local only.** The server listens only on your computer. Nothing is sent anywhere else.
+- **Free.** The MCP server is included in every plan.
+
+## Turn it on
+
+![Settings, MCP Server tab: the server switch with its running status, the port, the access token buttons, the exposed connections, and the client setup](/images/12-mcp-server/settings.png)
+
+<Steps>
+  <Step title="Open Settings, then MCP Server">
+    Turn on the switch at the top. The status line shows **Running on 127.0.0.1:5225**, or the error if the server could not start (for example, the port is already in use).
+  </Step>
+  <Step title="Choose a port (optional)">
+    You can change the port in the same tab. The server only accepts connections from this computer.
+  </Step>
+  <Step title="Expose a connection">
+    Open the connection you want agents to use, go to the **Advanced** section of its form, and turn on **Expose to agents**. Connections are hidden from agents until you do this.
+  </Step>
+  <Step title="Set up your client">
+    In **Setup for**, pick your client and press **Copy**. You get a ready-to-paste config with your access token already filled in, plus a line telling you where to paste it.
+  </Step>
+</Steps>
+
+![Edit Connection, Advanced section, with Expose to agents turned on](/images/12-mcp-server/expose-to-agents.png)
+
+<Note>**Expose to agents** is off by default, and connections you import always arrive with it off. Agents only see the connections you turn it on for.</Note>
+
+### Access token
+
+Every client needs the access token to connect. Use **Copy token** to copy it; the token itself is never shown on screen.
+
+**Regenerate** creates a new token and immediately cuts off every client still using the old one. Copy the new config into each client you want to keep using.
+
+## Supported clients
+
+Pick your client in **Setup for**, press **Copy**, and paste the config where the line under it says. The picker groups clients by kind:
+
+| Kind | Clients |
+|---|---|
+| **CLI** | Claude Code, Codex CLI, Gemini CLI, Goose |
+| **Editor** | Antigravity, Cline, Continue, Cursor, VS Code (GitHub Copilot), Windsurf, Zed |
+
+<Note>**Gemini CLI.** Checking that the connection works does not need you to sign in, but chatting with Gemini needs a Gemini API key or Vertex AI.</Note>
+
+Not supported:
+
+- **Claude Desktop** is not supported yet. It is listed under **Desktop app** in the picker as coming later.
+- **ChatGPT** can only connect to servers on the public internet, not to one running on your computer.
+- **JetBrains AI Assistant** cannot send the access token, so it cannot connect.
+
+## What an agent can do
+
+An agent can list the connections you exposed. It sees only each connection's name and database engine, never the host, user name, or password.
+
+| Engine | What an agent can do |
+|---|---|
+| SQL databases | List tables, read table schemas, search columns, sample values, explain a query, run a query |
+| MongoDB | List collections, find and sample documents |
+| Redis | List keys, read a key |
+| Oracle | List tables, read schemas, search columns. Running queries is not available for Oracle. |
+
+Read queries may only call the database's built-in functions. A function you wrote yourself is refused.
+
+Every agent call is recorded in the query history of that connection, so you can review what was run. See [Saved queries and history](/query-editor#saved-queries-and-history).
+
+## Approving changes
+
+When an agent wants to change data with an `INSERT`, `UPDATE`, `DELETE`, or `MERGE`, FlexTable asks you first.
+
+![Approval card: the agent that asked, the connection, the agent's reason, the full UPDATE statement, a countdown, and the Deny and Approve and run buttons](/images/12-mcp-server/approval-card.png)
+
+1. An **approval card** appears at the bottom right of the main window, and a badge appears in the title bar. The card does not block the rest of the app.
+
+   ![Title bar badge reading 1 agent request](/images/12-mcp-server/title-bar-badge.png)
+
+2. The card shows the **full statement**, the connection and database, which agent asked, the reason it gave, and a countdown. The statement is never shortened: scroll to its end to enable **Approve and run**.
+3. Choose:
+   - **Approve and run** runs exactly that statement, once.
+   - **Deny** runs nothing.
+   - **Hide** tucks the card away without answering. Click the title bar badge to bring it back.
+
+If you do not answer within about 45 seconds, the agent is told to check back later. The request stays open for 5 minutes.
+
+There is no "always allow": every change is approved one at a time.
+
+<Warning>
+  Always refused, without asking you:
+
+  - Changes to tables or other database objects (`CREATE`, `ALTER`, `DROP` and similar)
+  - Admin commands
+  - Statements that contain hidden or text-direction characters
+</Warning>
+
+A request still waiting is cancelled if you edit the connection, turn off **Expose to agents**, or change the MCP settings.
+
+While an approved change is running on a connection, disconnecting, switching database, or saving or deleting that connection waits a moment, then asks you to try again once the change has finished.
+
+## Limits
+
+- **Your own views and functions.** FlexTable blocks writes and unknown functions, but it cannot see inside views or functions you wrote in your database. For a hard guarantee, connect with a database user that only has read permissions.
+- **This computer only.** Agents on another computer cannot use the server.
+- **Claude Desktop** is not supported yet.
+
+## Troubleshooting
+
+| You see | What it means |
+|---|---|
+| The client gets **401** | The token is wrong or was regenerated. Copy the config again from **Setup for**. |
+| **Connection refused** | FlexTable is closed or the MCP server is off. Open FlexTable and turn the server on. |
+| The status line shows the port is in use | Another program is using that port. Choose a different port in Settings, then copy the client config again. |
+| The agent does not see a connection | Turn on **Expose to agents** in that connection's Advanced section. |
+
+<Card title="Security and privacy" icon="shield" href="/security-and-privacy">
+How FlexTable stores your connections and what leaves your computer.
+</Card>

@@ -47,7 +47,7 @@
       },
       {
         "group": "Manage and settings",
-        "pages": ["ai-assistant", "backup-and-restore", "settings"]
+        "pages": ["ai-assistant", "mcp-server", "backup-and-restore", "settings"]
       },
       {
         "group": "Help and reference",
